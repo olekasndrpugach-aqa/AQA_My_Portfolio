@@ -8,10 +8,13 @@ import org.testng.annotations.Test;
 
 
 public class SausLog { ;
-    private WebDriver driver;
+    public WebDriver driver;
 
-    @Test
-            public void SetLogSearch(){
+    public SausLog(WebDriver driver) {
+        this.driver = driver;
+    }
+
+    public void SetLogSearch(){
         WebElement searchLog=driver.findElement(By.id("user-name"));
         searchLog.sendKeys("standard-user");
         WebElement searchPass= driver.findElement(By.className("form_group"));
@@ -19,9 +22,8 @@ public class SausLog { ;
         WebElement buttonLogin= driver.findElement(By.id("login-button"));
         buttonLogin.click();
         System.out.println("Log In Successfully");
-
-
     }
 
-    }
+}
+
 
